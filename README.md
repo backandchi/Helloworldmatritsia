@@ -1,14 +1,14 @@
 # Helloworldmatritsia
 
-8x8 LED matritsada (MAX7219 drayverli) **HELLO WORLD** harflarini birin-ketin ko'rsatadigan Arduino loyihasi.
+An Arduino project that displays the letters of **HELLO WORLD** one by one on an 8x8 LED matrix (MAX7219 driver).
 
-## Kerakli qismlar
+## Required Parts
 
-- Arduino UNO / Nano (yoki mos plata)
-- MAX7219 drayverli 8x8 LED matritsa moduli
-- Ulash simlari
+- Arduino UNO / Nano (or compatible board)
+- 8x8 LED matrix module with MAX7219 driver
+- Jumper wires
 
-## Ulanish sxemasi
+## Wiring
 
 | MAX7219 | Arduino |
 |---------|---------|
@@ -18,20 +18,20 @@
 | CS      | D10     |
 | CLK     | D13     |
 
-## Ishlatish
+## Usage
 
-1. `HelloWorldMatrix/HelloWorldMatrix.ino` faylini Arduino IDE da oching.
-2. Platani tanlang (Tools → Board) va portni tanlang (Tools → Port).
-3. **Upload** tugmasini bosing.
+1. Open `HelloWorldMatrix/HelloWorldMatrix.ino` in the Arduino IDE.
+2. Select your board (Tools → Board) and port (Tools → Port).
+3. Click **Upload**.
 
-Hech qanday qo'shimcha kutubxona kerak emas — kod MAX7219 bilan to'g'ridan-to'g'ri ishlaydi.
+No extra libraries are required — the code talks to the MAX7219 directly.
 
-## Qanday ishlaydi
+## How It Works
 
-Harflar birin-ketin chiqadi: **H → E → L → L → O → W → O → R → L → D → ♥** va shu ketma-ketlik qaytadan takrorlanadi.
+The letters appear one by one: **H → E → L → L → O → W → O → R → L → D → ♥**, and the sequence repeats.
 
-Kod ichidagi sozlamalar:
+Settings in the code:
 
-- `HARF_VAQTI` — har bir harf qancha vaqt ko'rinishi (standart: 800 ms)
-- `PAUZA` — harflar orasidagi qorong'i pauza (standart: 200 ms)
-- `REG_INTENSITY` qiymati — yorqinlik (0x00 dan 0x0F gacha)
+- `HARF_VAQTI` — how long each letter stays on screen (default: 800 ms)
+- `PAUZA` — dark pause between letters (default: 200 ms)
+- `REG_INTENSITY` value — brightness (0x00 to 0x0F)
